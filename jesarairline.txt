@@ -1,0 +1,34 @@
+CREATE TABLE `tbl_admin` (
+  `fld_id` int(11) NOT NULL,
+  `fld_firstname` varchar(255) DEFAULT NULL,
+  `fld_lastname` varchar(255) DEFAULT NULL,
+  `fld_email` varchar(255) DEFAULT NULL,
+  `fld_username` varchar(250) DEFAULT NULL,
+  `fld_password` varchar(255) DEFAULT NULL,
+  `fld_dateadded` date DEFAULT NULL,
+  `fld_status` tinyint(3) DEFAULT '1',
+  `fld_phone` varchar(255) DEFAULT NULL,
+  `fld_position` varchar(255) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+
+INSERT INTO `tbl_admin` (`fld_id`, `fld_firstname`, `fld_lastname`, `fld_email`, `fld_username`, `fld_password`, `fld_dateadded`, `fld_status`, `fld_phone`, `fld_position`) VALUES
+(1, 'Joe', 'Arasu', 'aa@gmail.com', 'jesar', 'jesar', '1991-01-24', 1, '7826093772', '1');
+
+CREATE TABLE `table_engineer` (
+  `fld_id` int(11) NOT NULL,
+  `fld_engineer` varchar(255) DEFAULT NULL,
+  `fld_engineer_task` varchar(255) DEFAULT NULL,
+  `fld_status` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `table_engineer` (`fld_id`, `fld_engineer`, `fld_engineer_task`, `fld_status`) VALUES
+(1, 'Adrian', 'Service', 1),
+(2, 'Borris', 'Service', 1),
+(3, 'Ligori', 'Service', 1),
+(4, 'Ezhil', 'Service', 1),
+(5, 'Sam', 'Service', 1),
+(6, 'Haseeb', 'Repair', 1),
+(7, 'Navis', 'Repair', 1),
+(8, 'Joseph', 'Repair', 1),
+(9, 'Michael', 'Repair', 1),
+(10, 'Jessie', 'Repair', 1);
