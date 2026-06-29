@@ -104,3 +104,64 @@ For large nuPlan .db files, it is recommended to start with the following option
 --max-datasets 5
 
 This helps test the script on a smaller number of files first, reducing loading time and memory usage. Once the script runs successfully, the number of datasets can be increased.
+
+To Run cav_ids_genai_safety_assistant_secure_deployment.py
+1. Application Type
+
+cav_ids_genai_safety_assistant_secure_deployment.py is a Streamlit web application.
+Therefore, it should be run using streamlit run, not plain Python.
+
+Do not run it using:
+
+python cav_ids_genai_safety_assistant_secure_deployment.py
+
+Instead, use:
+
+streamlit run cav_ids_genai_safety_assistant_secure_deployment.py
+2. Required Python Packages
+
+Install the core packages using the following command:
+
+py -m pip install streamlit pandas numpy scikit-learn plotly
+
+For the advanced generative AI features, it is recommended to install the full package set:
+
+py -m pip install streamlit pandas numpy scikit-learn plotly transformers torch opacus
+3. Package Purposes
+Package	Purpose
+streamlit	Runs the web application
+pandas and numpy	Dataset loading, cleaning, preprocessing, and numerical processing
+scikit-learn	IDS model training, metrics, train/test split, Random Forest, and Decision Tree models
+plotly	Interactive charts and dashboards
+transformers	Optional chatbot and text-generation support
+torch	Transformer-based CAN sequence generation
+opacus	Optional differential privacy training support
+sqlite3	Built into Python; used for local database storage
+4. How to Run the App
+
+Use the full file path with streamlit run:
+
+streamlit run "C:\Users\joead\Downloads\CAV+IDS\activity4_nuplan_enhanced\cav_ids_genai_safety_assistant_secure_deployment.py"
+5. Running with Larger Browser Uploads
+
+For larger browser-based file uploads, increase the Streamlit upload limit:
+
+streamlit run "C:\Users\joead\Downloads\CAV+IDS\activity4_nuplan_enhanced\cav_ids_genai_safety_assistant_secure_deployment.py" --server.maxUploadSize 1024
+
+This allows uploads up to approximately 1024 MB through the browser.
+
+6. Recommended Option for Large Car-Hacking Dataset Files
+
+For Car-Hacking dataset files larger than 200 MB, the better approach is to use the local folder loader inside the application instead of uploading through the browser.
+
+This is recommended because very large browser uploads can be slow, unstable, or limited by browser and Streamlit memory constraints. Loading files directly from a local folder is more reliable for large .csv datasets.
+
+7. Summary
+
+To run the application successfully:
+
+Install the required packages.
+Use streamlit run, not plain Python.
+Use the full script path when running the app.
+Increase --server.maxUploadSize only when browser upload is required.
+For large Car-Hacking files, use the local folder loader inside the app.
